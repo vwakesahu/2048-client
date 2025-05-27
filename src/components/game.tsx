@@ -29,7 +29,6 @@ export default function Game2048() {
     setMounted(true);
   }, []);
 
-  // Don't render anything until mounted (prevents hydration issues)
   if (!mounted) {
     return (
       <div className="min-h-screen bg-background p-4">
@@ -50,7 +49,6 @@ export default function Game2048() {
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-lg mx-auto">
-        {/* Header */}
         <div className="mb-6">
           <div className="flex flex-col items-center mb-4">
             <h1 className="text-6xl font-press-start text-foreground tracking-wider transform -skew-x-6 mb-2">
@@ -62,7 +60,6 @@ export default function Game2048() {
           </div>
         </div>
 
-        {/* Score Section */}
         <div className="flex justify-between items-center mb-6">
           <div className="flex gap-4">
             <Card className="px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-yellow-300">
@@ -80,7 +77,6 @@ export default function Game2048() {
           </div>
         </div>
 
-        {/* Game Status */}
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-4">
             <AlertDialog>
@@ -189,7 +185,6 @@ export default function Game2048() {
           </div>
         </div>
 
-        {/* Game Board */}
         <Card
           className={`p-6 bg-white border-4 border-black border-dashed shadow-none ${
             !isConnected ? "opacity-50 pointer-events-none" : ""
